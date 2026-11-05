@@ -102,6 +102,12 @@ footer { padding: 35px 0 50px; color: var(--muted); font-size: 12px; }
   }
 }
 
+button.btn {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
 /* Modal */
 .modal {
   display: none;
@@ -119,14 +125,22 @@ footer { padding: 35px 0 50px; color: var(--muted); font-size: 12px; }
 }
 
 .modal-content {
-  position: relative;
-  background: var(--white);
-  color: var(--black);
-  padding: 40px;
-  width: 100%;
-  max-width: 520px;
-  border-top: 10px solid var(--red);
-  box-shadow: 8px 8px 0 var(--yellow);
+  background: var(--paper);
+  color: var(--ink);
+  border-top: 10px solid var(--orange);
+  box-shadow: 8px 8px 0 var(--lime);
+}
+
+.modal-close {
+  color: var(--ink);
+}
+
+.modal-close:hover {
+  color: var(--orange);
+}
+
+.modal-email {
+  color: var(--ink);
 }
 
 .modal-content h2 {

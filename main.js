@@ -56,16 +56,14 @@ async function init() {
 
 init().catch(console.error);
 
-// Modal event listeners
+// Open modals
 document.querySelectorAll("[data-modal-open]").forEach((button) => {
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    const type = button.dataset.modalOpen;
-    const modal = document.getElementById(`modal-${type}`);
+  button.addEventListener("click", () => {
+    const modalId = `modal-${button.dataset.modalOpen}`;
+    const modal = document.getElementById(modalId);
 
     if (!modal) {
-      console.error(`Modal not found: modal-${type}`);
+      console.error(`Modal not found: ${modalId}`);
       return;
     }
 
