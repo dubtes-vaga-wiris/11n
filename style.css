@@ -68,7 +68,7 @@ h2 { font-size: clamp(34px, 5vw, 55px); letter-spacing: -.06em; line-height: 1.0
 .callout strong { font-size: 20px; color: var(--lime); letter-spacing: -.03em; }
 .callout p { margin: 4px 0 0; font-size: 14px; color: var(--lime); max-width: 580px; }
 .faq { background: var(--lime); }
-.faq-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.faq-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-bottom: 15px;}
 .faq details { background: var(--card); border: 1px solid var(--line); border-radius: 9px; padding: 0 18px; }
 .faq summary { cursor: pointer; list-style: none; font-weight: 750; padding: 18px 28px 18px 0; position: relative; }
 .faq summary::-webkit-details-marker { display: none; }
