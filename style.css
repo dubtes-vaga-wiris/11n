@@ -125,10 +125,18 @@ button.btn {
 }
 
 .modal-content {
-  background: var(--paper);
-  color: var(--ink);
-  border-top: 10px solid var(--orange);
-  box-shadow: 8px 8px 0 var(--lime);
+  position: relative;
+    width: 100%;
+    max-width: 460px;
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    background: var(--paper);
+    color: var(--ink);
+    border: 10px solid var(--orange);
 }
 
 .modal-close {
@@ -146,12 +154,13 @@ button.btn {
 .modal-content h2 {
   font-size: 32px;
   font-weight: 900;
-  margin-bottom: 18px;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .modal-content p {
-  line-height: 1.7;
-  margin-bottom: 20px;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .modal-email {
@@ -184,6 +193,7 @@ button.btn {
 
 @media (max-width: 500px) {
   .modal-content {
-    padding: 25px;
+    padding: 24px;
+    gap: 16px;
   }
 }
