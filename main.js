@@ -55,3 +55,39 @@ async function init() {
 }
 
 init().catch(console.error);
+
+// -----
+// Modal
+// -----
+
+const contactModal = document.getElementById("contactModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalText = document.getElementById("modalText");
+const modalClose = document.getElementById("modalClose");
+
+function openContactModal(type) {
+  const translation = translations[currentLanguage];
+
+  modalTitle.textContent = translation[`${type}ModalTitle`];
+  modalText.textContent = translation[`${type}ModalText`];
+  modalClose.textContent = translation.modalClose;
+
+  contactModal.showModal();
+}
+
+document.querySelectorAll("[data-modal]").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    openContactModal(button.dataset.modal);
+  });
+});
+
+modalClose.addEventListener("click", () => {
+  contactModal.close();
+});
+
+contactModal.addEventListener("click", (event) => {
+  if (event.target === contactModal) {
+    contactModal.close();
+  }
+});

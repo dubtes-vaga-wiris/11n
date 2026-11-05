@@ -98,3 +98,58 @@ footer { padding: 35px 0 50px; color: var(--muted); font-size: 12px; }
   .callout { align-items: flex-start; flex-direction: column; }
   section { padding: 58px 0; }
 }
+
+/* Modal */
+.modal {
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 0;
+  width: min(500px, calc(100% - 40px));
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 8px 8px 0 var(--orange);
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 30, 0.7);
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  padding: 35px;
+}
+
+.modal-content h2 {
+  font-size: clamp(30px, 5vw, 42px);
+  line-height: 1.05;
+  margin: 0 0 20px;
+  color: var(--orange);
+}
+
+.modal-content p {
+  color: var(--muted);
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+
+.modal-email {
+  display: inline-block;
+  color: var(--ink);
+  font-weight: 800;
+  text-underline-offset: 4px;
+  margin-bottom: 25px;
+}
+
+.modal-content .btn {
+  display: block;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  width: fit-content;
+}
+
+@media (max-width: 500px) {
+  .modal-content {
+    padding: 25px;
+  }
+}
