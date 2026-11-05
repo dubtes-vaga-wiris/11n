@@ -61,5 +61,9 @@
     "languageLabel": "Canviar idioma",
     "langButton": "ES",
     "pageTitle": "11N · Vaga general a WIRIS",
-    "preguntes": "Tinc més preguntes"
+    "preguntes": "Tinc més preguntes",
+    "modalJoinTitle": "T'hi vols sumar?",
+    "modalJoinText": "Ens alegra que vulguis participar! Escriu-nos un correu i t'explicarem com sumar-te a la iniciativa i com pots col·laborar.",
+    "modalDoubtsTitle": "Tens més dubtes?",
+    "modalDoubtsText": "Si tens preguntes concretes sobre la iniciativa, la convocatòria o com et pot afectar, escriu-nos. Intentarem resoldre els teus dubtes i facilitar-te la informació disponible."
   }

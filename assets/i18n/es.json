@@ -61,5 +61,9 @@
     "languageLabel": "Cambiar idioma",
     "langButton": "CAT",
     "pageTitle": "11N · Huelga general en WIRIS",
-    "preguntes": "Tengo más preguntas"
+    "preguntes": "Tengo más preguntas",
+    "modalJoinTitle": "¿Quieres sumarte?",
+    "modalJoinText": "¡Nos alegra que quieras participar! Escríbenos un correo y te explicaremos cómo sumarte a la iniciativa y cómo puedes colaborar.",
+    "modalDoubtsTitle": "¿Tienes más dudas?",
+    "modalDoubtsText": "Si tienes preguntas concretas sobre la iniciativa, la convocatoria o cómo puede afectarte, escríbenos. Intentaremos resolver tus dudas y facilitarte la información disponible."
   }
