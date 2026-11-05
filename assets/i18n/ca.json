@@ -8,7 +8,7 @@
     "heroTitle": "L'11N, a Wiris ens aturem",
     "heroDescription": "La vaga general de l'11 de novembre posa sobre la taula una qüestió que ens afecta a totes les persones treballadores: el cost de viure no pot continuar creixent més de pressa que els nostres salaris.",
     "heroButton1": "Entendre'n els motius",
-    "heroButton2": "Resoldre els meus dubtes",
+    "heroButton2": "Resoldre dubtes",
     "reasonsKicker": "01 / Per què fem vaga",
     "reasonsTitle": "Perquè viure no hauria de ser un luxe.",
     "reasonsIntro": "La convocatòria connecta reivindicacions laborals i socials. Volem un sou suficient per viure, tenir un habitatge i construir un futur.",
@@ -65,5 +65,6 @@
     "modalJoinTitle": "T'hi vols sumar?",
     "modalJoinText": "Ens alegra que vulguis participar! Escriu-nos un correu i t'explicarem com sumar-te a la iniciativa i com pots col·laborar.",
     "modalDoubtsTitle": "Tens més dubtes?",
-    "modalDoubtsText": "Si tens preguntes concretes sobre la iniciativa, la convocatòria o com et pot afectar, escriu-nos. Intentarem resoldre els teus dubtes i facilitar-te la informació disponible."
+    "modalDoubtsText": "Si tens preguntes concretes sobre la iniciativa, la convocatòria o com et pot afectar, escriu-nos. Intentarem resoldre els teus dubtes i facilitar-te la informació disponible.",
+    "volumGent": "Ja som més del 20%"
   }
