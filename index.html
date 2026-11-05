@@ -98,6 +98,9 @@
     <details><summary data-i18n="q9">L'empresa pot fixar serveis mínims?</summary><p data-i18n="a9">Els serveis mínims els estableix l'autoritat laboral competent quan correspon, no l'empresa per iniciativa pròpia. L'empresa s'ha d'ajustar a la resolució oficial.</p></details>
     <details><summary data-i18n="q10">La vaga afecta tota la jornada?</summary><p data-i18n="a10">La convocatòria general registrada per la CGT fixa l'aturada de l'11 de novembre entre les 00.00 i les 23.59. Si tens un torn que comença el dia anterior o acaba l'endemà, consulta el preavís i la informació sindical específica.</p></details>
   </div>
+  <a href="#" class="btn secondary" onclick="openModal('doubts'); return false;">
+    Tens més dubtes?
+  </a>
   <p class="note" data-i18n="faqNote">Informació general, no assessorament jurídic individual. Consulta la guia sindical completa i el preavís aplicable al teu territori i sector per a casos concrets.</p>
 </div>
 </section>
@@ -117,6 +120,7 @@
     <a
       class="btn"
       href="#"
+      onclick="openModal('join'); return false"
       data-modal="participate"
       data-i18n="joinEmail"
     >
@@ -126,6 +130,78 @@
   <p style="font-size:13px;color:#d2dbea;margin-top:18px" data-i18n="joinNote">Pots respondre a la persona que t'ha compartit aquesta pàgina per sumar-te al grup i rebre més informació. No cal comunicar la teva decisió a l'empresa amb antelació.</p>
 </div>
 </section>
+
+<!-- Modal participar -->
+<div class="modal" id="modal-join"
+     role="dialog" aria-modal="true"
+     aria-labelledby="modal-join-title"
+     onclick="closeModalOnBackdrop(event, 'join')">
+
+  <div class="modal-content">
+    <button class="modal-close" type="button"
+            aria-label="Tancar"
+            onclick="closeModal('join')">×</button>
+
+    <h2 id="modal-join-title"
+        data-ca="T'hi vols sumar?"
+        data-es="¿Quieres sumarte?">
+      T'hi vols sumar?
+    </h2>
+
+    <p data-ca="Ens alegra que vulguis participar! Escriu-nos un correu i t'explicarem com sumar-te a la iniciativa i com pots col·laborar."
+       data-es="¡Nos alegra que quieras participar! Escríbenos un correo y te explicaremos cómo sumarte a la iniciativa y cómo puedes colaborar.">
+      Ens alegra que vulguis participar!
+    </p>
+
+    <a class="modal-email"
+       href="mailto:dubtes@gmail.com?subject=Vull%20participar%20en%20la%20iniciativa">
+      dubtes@gmail.com
+    </a>
+
+    <a class="btn"
+       href="mailto:dubtes@gmail.com?subject=Vull%20participar%20en%20la%20iniciativa"
+       data-ca="Escriure un correu →"
+       data-es="Escribir un correo →">
+      Escriure un correu →
+    </a>
+  </div>
+</div>
+
+<!-- Modal dubtes -->
+<div class="modal" id="modal-doubts"
+     role="dialog" aria-modal="true"
+     aria-labelledby="modal-doubts-title"
+     onclick="closeModalOnBackdrop(event, 'doubts')">
+
+  <div class="modal-content">
+    <button class="modal-close" type="button"
+            aria-label="Tancar"
+            onclick="closeModal('doubts')">×</button>
+
+    <h2 id="modal-doubts-title"
+        data-ca="Tens dubtes?"
+        data-es="¿Tienes dudas?">
+      Tens dubtes?
+    </h2>
+
+    <p data-ca="Si tens preguntes concretes sobre la iniciativa, la convocatòria o com et pot afectar, escriu-nos. Intentarem resoldre els teus dubtes i facilitar-te la informació disponible."
+       data-es="Si tienes preguntas concretas sobre la iniciativa, la convocatoria o cómo puede afectarte, escríbenos. Intentaremos resolver tus dudas y facilitarte la información disponible.">
+      Si tens preguntes concretes, escriu-nos.
+    </p>
+
+    <a class="modal-email"
+       href="mailto:dubtes@gmail.com?subject=Tinc%20dubtes%20sobre%20la%20iniciativa">
+      dubtes@gmail.com
+    </a>
+
+    <a class="btn"
+       href="mailto:dubtes@gmail.com?subject=Tinc%20dubtes%20sobre%20la%20iniciativa"
+       data-ca="Enviar una consulta →"
+       data-es="Enviar una consulta →">
+      Enviar una consulta →
+    </a>
+  </div>
+</div>
 </main>
 
 <footer>

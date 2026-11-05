@@ -56,38 +56,29 @@ async function init() {
 
 init().catch(console.error);
 
-// -----
-// Modal
-// -----
+// Open modal
+function openModal(type) {
+  const modal = document.getElementById(`modal-${type}`);
 
-const contactModal = document.getElementById("contactModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalText = document.getElementById("modalText");
-const modalClose = document.getElementById("modalClose");
-
-function openContactModal(type) {
-  const translation = translations[currentLanguage];
-
-  modalTitle.textContent = translation[`${type}ModalTitle`];
-  modalText.textContent = translation[`${type}ModalText`];
-  modalClose.textContent = translation.modalClose;
-
-  contactModal.showModal();
+  if (modal) {
+    modal.classList.add("active");
+    document.body.classList.add("modal-open");
+  }
 }
 
-document.querySelectorAll("[data-modal]").forEach((button) => {
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    openContactModal(button.dataset.modal);
-  });
-});
+// Close modal
+function closeModal(type) {
+  const modal = document.getElementById(`modal-${type}`);
 
-modalClose.addEventListener("click", () => {
-  contactModal.close();
-});
-
-contactModal.addEventListener("click", (event) => {
-  if (event.target === contactModal) {
-    contactModal.close();
+  if (modal) {
+    modal.classList.remove("active");
+    document.body.classList.remove("modal-open");
   }
-});
+}
+
+// Close modal when clicking on backdrop
+function closeModalOnBackdrop(event, type) {
+  if (event.target === event.currentTarget) {
+    closeModal(type);
+  }
+}
