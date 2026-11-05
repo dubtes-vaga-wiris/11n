@@ -57,28 +57,46 @@ async function init() {
 init().catch(console.error);
 
 // Open modal
-function openModal(type) {
+window.openModal = function (type) {
   const modal = document.getElementById(`modal-${type}`);
 
-  if (modal) {
-    modal.classList.add("active");
-    document.body.classList.add("modal-open");
+  if (!modal) {
+    console.error(`Modal not found: modal-${type}`);
+    return;
   }
-}
+
+  modal.classList.add("active");
+  document.body.classList.add("modal-open");
+};
 
 // Close modal
-function closeModal(type) {
+window.closeModal = function (type) {
   const modal = document.getElementById(`modal-${type}`);
 
-  if (modal) {
-    modal.classList.remove("active");
+  if (!modal) return;
+
+  modal.classList.remove("active");
+
+  // Only unlock scrolling if no other modal is open
+  if (!document.querySelector(".modal.active")) {
     document.body.classList.remove("modal-open");
   }
-}
+};
 
 // Close modal when clicking on backdrop
-function closeModalOnBackdrop(event, type) {
+window.closeModalOnBackdrop = function (event, type) {
   if (event.target === event.currentTarget) {
-    closeModal(type);
+    window.closeModal(type);
   }
-}
+};
+
+// Close with Escape
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    document.querySelectorAll(".modal.active").forEach((modal) => {
+      modal.classList.remove("active");
+    });
+
+    document.body.classList.remove("modal-open");
+  }
+});
