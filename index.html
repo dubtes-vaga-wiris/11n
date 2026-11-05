@@ -98,7 +98,7 @@
     <details><summary data-i18n="q9">L'empresa pot fixar serveis mínims?</summary><p data-i18n="a9">Els serveis mínims els estableix l'autoritat laboral competent quan correspon, no l'empresa per iniciativa pròpia. L'empresa s'ha d'ajustar a la resolució oficial.</p></details>
     <details><summary data-i18n="q10">La vaga afecta tota la jornada?</summary><p data-i18n="a10">La convocatòria general registrada per la CGT fixa l'aturada de l'11 de novembre entre les 00.00 i les 23.59. Si tens un torn que comença el dia anterior o acaba l'endemà, consulta el preavís i la informació sindical específica.</p></details>
   </div>
-  <a href="#" class="btn secondary" onclick="openModal('doubts'); return false;">
+  <a href="#" class="btn secondary" data-modal-open="doubts">
     Tens més dubtes?
   </a>
   <p class="note" data-i18n="faqNote">Informació general, no assessorament jurídic individual. Consulta la guia sindical completa i el preavís aplicable al teu territori i sector per a casos concrets.</p>
@@ -120,8 +120,7 @@
     <a
       class="btn"
       href="#"
-      onclick="openModal('join'); return false"
-      data-modal="participate"
+      data-modal-open="join"
       data-i18n="joinEmail"
     >
       Vull participar →
@@ -134,13 +133,12 @@
 <!-- Modal participar -->
 <div class="modal" id="modal-join"
      role="dialog" aria-modal="true"
-     aria-labelledby="modal-join-title"
-     onclick="closeModalOnBackdrop(event, 'join')">
+     aria-labelledby="modal-join-title">
 
   <div class="modal-content">
     <button class="modal-close" type="button"
             aria-label="Tancar"
-            onclick="closeModal('join')">×</button>
+            data-modal-close>×</button>
 
     <h2 id="modal-join-title"
         data-ca="T'hi vols sumar?"
@@ -170,13 +168,12 @@
 <!-- Modal dubtes -->
 <div class="modal" id="modal-doubts"
      role="dialog" aria-modal="true"
-     aria-labelledby="modal-doubts-title"
-     onclick="closeModalOnBackdrop(event, 'doubts')">
+     aria-labelledby="modal-doubts-title">
 
   <div class="modal-content">
     <button class="modal-close" type="button"
             aria-label="Tancar"
-            onclick="closeModal('doubts')">×</button>
+            data-modal-close>×</button>
 
     <h2 id="modal-doubts-title"
         data-ca="Tens dubtes?"

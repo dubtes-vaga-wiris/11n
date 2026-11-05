@@ -56,39 +56,46 @@ async function init() {
 
 init().catch(console.error);
 
-// Open modal
-window.openModal = function (type) {
-  const modal = document.getElementById(`modal-${type}`);
+// Modal event listeners
+document.querySelectorAll("[data-modal-open]").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
 
-  if (!modal) {
-    console.error(`Modal not found: modal-${type}`);
-    return;
-  }
+    const type = button.dataset.modalOpen;
+    const modal = document.getElementById(`modal-${type}`);
 
-  modal.classList.add("active");
-  document.body.classList.add("modal-open");
-};
+    if (!modal) {
+      console.error(`Modal not found: modal-${type}`);
+      return;
+    }
 
-// Close modal
-window.closeModal = function (type) {
-  const modal = document.getElementById(`modal-${type}`);
+    modal.classList.add("active");
+    document.body.classList.add("modal-open");
+  });
+});
 
-  if (!modal) return;
+// Close buttons
+document.querySelectorAll("[data-modal-close]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = button.closest(".modal");
 
-  modal.classList.remove("active");
+    if (modal) {
+      modal.classList.remove("active");
+    }
 
-  // Only unlock scrolling if no other modal is open
-  if (!document.querySelector(".modal.active")) {
-    document.body.classList.remove("modal-open");
-  }
-};
+    updateModalScroll();
+  });
+});
 
-// Close modal when clicking on backdrop
-window.closeModalOnBackdrop = function (event, type) {
-  if (event.target === event.currentTarget) {
-    window.closeModal(type);
-  }
-};
+// Close when clicking outside the modal content
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.classList.remove("active");
+      updateModalScroll();
+    }
+  });
+});
 
 // Close with Escape
 document.addEventListener("keydown", (event) => {
@@ -97,6 +104,11 @@ document.addEventListener("keydown", (event) => {
       modal.classList.remove("active");
     });
 
-    document.body.classList.remove("modal-open");
+    updateModalScroll();
   }
 });
+
+function updateModalScroll() {
+  const hasOpenModal = document.querySelector(".modal.active");
+  document.body.classList.toggle("modal-open", !!hasOpenModal);
+}
