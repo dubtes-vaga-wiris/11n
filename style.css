@@ -108,8 +108,8 @@ button.btn {
   cursor: pointer;
 }
 
-.callout2 {  background: var(--lime); padding: 25px 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-.callout2 h2 { margin: 4px 0 0; font-size: 14px; color: var(--ink); max-width: 580px; }
+.callout2 {  background: var(--lime); display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.callout2 h2 { margin: 4px 0 0; color: var(--ink); max-width: 580px; }
 
 
 /* Modal */
