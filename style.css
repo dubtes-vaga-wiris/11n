@@ -65,7 +65,7 @@ h2 { font-size: clamp(34px, 5vw, 55px); letter-spacing: -.06em; line-height: 1.0
 .reason h3 { font-size: 22px; letter-spacing: -.04em; margin: 16px 0 8px; }
 .reason p { color: var(--muted); margin: 0; font-size: 15px; }
 .callout { margin-top: 16px; background: var(--ink); border-radius: 12px; padding: 25px 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-.callout strong { font-size: 20px; letter-spacing: -.03em; }
+.callout strong { font-size: 20px; color: var(--lime); letter-spacing: -.03em; }
 .callout p { margin: 4px 0 0; font-size: 14px; color: var(--lime); max-width: 580px; }
 .faq { background: var(--lime); }
 .faq-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
