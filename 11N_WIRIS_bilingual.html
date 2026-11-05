@@ -1,0 +1,396 @@
+,,<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101820">
+<title>11N · Vaga general a WIRIS</title>
+
+<style>
+:root {
+  --ink: #00009E;
+  --muted: #1b1b1c;
+  --paper: #ffffff;
+  --card: #ffffff;
+  --lime: #fff200;
+  --line: #8488af;
+  --orange: #ef0000;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: Helvetica, sans-serif, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+}
+a { color: inherit; }
+.wrap { width: min(1080px, calc(100% - 40px)); margin: auto; }
+header { padding: 22px 0; border-bottom: 1px solid var(--line); }
+.nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.brand { font-weight: 850; letter-spacing: -.04em; }
+.brand span:first-child {
+  background: var(--lime); padding: 4px 8px; border-radius: 5px; margin-right: 7px;
+}
+.nav-right { display: flex; align-items: center; gap: 18px; }
+.nav nav { display: flex; align-items: center; }
+.nav nav a {
+  font-size: 14px; font-weight: 800; text-decoration: none;
+  color: var(--muted); margin-left: 18px;
+}
+.language-btn {
+  border: 1px solid var(--lime); background: var(--lime); color: var(--ink);
+  padding: 9px 13px; border-radius: 7px; font-weight: 800; font-size: 14px;
+  cursor: pointer; transition: .2s;
+}
+.language-btn:hover { background: var(--orange); border-color: var(--orange); color: var(--paper); }
+.hero { padding: 82px 0 76px; background: var(--ink); color: #fff; position: relative; overflow: hidden; }
+.hero:after {
+  content: "11N"; position: absolute; font-size: clamp(220px, 38vw, 470px);
+  font-weight: 900; letter-spacing: -.12em; line-height: 1;
+  color: rgba(255,255,255,.1); right: 1%; top: -65px; pointer-events: none;
+}
+.eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: 11px; font-weight: 800; color: var(--paper); }
+h1 {
+  font-size: clamp(54px, 9vw, 106px); line-height: .91; letter-spacing: -.05em;
+  margin: 20px 0 24px; max-width: 760px; color: var(--lime);
+}
+.hero p { font-size: clamp(17px, 2vw, 21px); max-width: 630px; color: var(--paper); margin: 0 0 30px; }
+.date { display: inline-flex; align-items: center; gap: 10px; border: 1px solid #64748b; border-radius: 100px; padding: 9px 15px; font-size: 13px; }
+.date b { color: var(--lime); }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.btn { display: inline-block; padding: 13px 18px; border-radius: 7px; text-decoration: none; font-weight: 750; font-size: 14px; background: var(--lime); color: var(--ink); }
+.btn:hover { background: var(--paper); border-color: var(--paper); }
+.btn.secondary { background: var(--orange); color: #fff; }
+.btn.secondary:hover { background: #9f0000; border-color: #9f0000; }
+section { padding: 76px 0; }
+.section-top { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 30px; }
+.kicker { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; font-weight: 800; color: #2457a7; }
+h2 { font-size: clamp(34px, 5vw, 55px); letter-spacing: -.06em; line-height: 1.02; margin: 10px 0 0; color: var(--orange); }
+.intro { max-width: 440px; color: var(--muted); margin: 0; }
+.reasons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.reason { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 25px; min-height: 190px; }
+.num { font-size: 12px; color: var(--orange); font-weight: 850; letter-spacing: .08em; }
+.reason h3 { font-size: 22px; letter-spacing: -.04em; margin: 16px 0 8px; }
+.reason p { color: var(--muted); margin: 0; font-size: 15px; }
+.callout { margin-top: 16px; background: var(--lime); border-radius: 12px; padding: 25px 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.callout strong { font-size: 20px; letter-spacing: -.03em; }
+.callout p { margin: 4px 0 0; font-size: 14px; max-width: 580px; }
+.faq { background: var(--lime); }
+.faq-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.faq details { background: var(--card); border: 1px solid var(--line); border-radius: 9px; padding: 0 18px; }
+.faq summary { cursor: pointer; list-style: none; font-weight: 750; padding: 18px 28px 18px 0; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:after { content: "+"; position: absolute; right: 0; top: 15px; font-size: 22px; font-weight: 400; color: #2457a7; }
+.faq details[open] summary:after { content: "−"; }
+.faq details p { margin: 0; padding: 0 0 18px; color: var(--muted); font-size: 14px; }
+.note { font-size: 12px; color: var(--muted); margin-top: 18px; }
+.join { background: var(--ink); color: #fff; }
+.join .intro { color: var(--lime); }
+.join-panel { margin-top: 30px; padding: 30px; border: 1px solid #64748b; border-radius: 13px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; }
+.count { font-size: clamp(58px, 9vw, 94px); font-weight: 900; letter-spacing: -.08em; line-height: 1; color: var(--lime); }
+.join-panel p { color: var(--lime); max-width: 520px; margin: 8px 0 0; }
+.join-panel .btn { white-space: nowrap; }
+footer { padding: 35px 0 50px; color: var(--muted); font-size: 12px; }
+.sources { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0 20px; }
+.sources a { font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; color: #2457a7; }
+.disclaimer { border-top: 1px solid var(--line); padding-top: 18px; max-width: 820px; }
+@media(max-width:700px) {
+  .nav-right { gap: 10px; }
+  .nav nav { display: none; }
+  .hero { padding: 62px 0; }
+  .section-top { display: block; }
+  .intro { margin-top: 15px; }
+  .reasons, .faq-list { grid-template-columns: 1fr; }
+  .join-panel { grid-template-columns: 1fr; }
+  .join-panel .btn { justify-self: start; }
+  .callout { align-items: flex-start; flex-direction: column; }
+  section { padding: 58px 0; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <span data-i18n="brandLabel">VAGA GENERAL 11N</span>
+      <span data-i18n="brand">WIRIS</span>
+    </div>
+    <div class="nav-right">
+      <nav>
+        <a href="#motivos" data-i18n="navReasons">Motius</a>
+        <a href="#dudas" data-i18n="navFaq">Preguntes freqüents</a>
+        <a href="#participa" data-i18n="navJoin">Participa-hi</a>
+      </nav>
+      <button class="language-btn" id="languageToggle" type="button" aria-label="Canviar idioma" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="eyebrow">Una jornada per defensar condicions de vida dignes</div>
+    <h1 data-i18n="heroTitle">L'11N<br>aturem-nos a Wiris.</h1>
+    <p data-i18n="heroDescription">La vaga general de l'11 de novembre posa sobre la taula una qüestió que ens afecta a totes les persones treballadores: el cost de viure no pot continuar creixent més de pressa que els nostres salaris.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#motivos" data-i18n="heroButton1">Entendre'n els motius</a>
+      <a class="btn secondary" href="#dudas" data-i18n="heroButton2">Resoldre els meus dubtes</a>
+    </div>
+  </div>
+</div>
+
+<section id="motivos">
+<div class="wrap">
+  <div class="section-top">
+    <div>
+      <div class="kicker" data-i18n="reasonsKicker">01 / Per què fem vaga</div>
+      <h2 data-i18n="reasonsTitle">Perquè viure<br>no hauria de ser<br>un luxe.</h2>
+    </div>
+    <p class="intro" data-i18n="reasonsIntro">La convocatòria connecta reivindicacions laborals i socials. Volem un sou suficient per viure, tenir un habitatge i construir un futur.</p>
+  </div>
+  <div class="reasons">
+    <article class="reason">
+      <div class="num" data-i18n="reasonNum1">01 — HABITATGE</div>
+      <h3 data-i18n="reasonTitle1">Un sostre assequible</h3>
+      <p data-i18n="reasonText1">Reclamem mesures per garantir l'accés a un habitatge digne i protegir les persones que pateixen desnonaments.</p>
+    </article>
+    <article class="reason">
+      <div class="num" data-i18n="reasonNum2">02 — SALARIS</div>
+      <h3 data-i18n="reasonTitle2">Sous que permetin viure</h3>
+      <p data-i18n="reasonText2">Demanem que els salaris i el salari mínim interprofessional evolucionin al ritme del cost de la vida, per no perdre poder adquisitiu mentre augmenten les despeses bàsiques.</p>
+    </article>
+    <article class="reason">
+      <div class="num" data-i18n="reasonNum3">03 — COST DE LA VIDA</div>
+      <h3 data-i18n="reasonTitle3">Arribar a final de mes</h3>
+      <p data-i18n="reasonText3">El lloguer, l'alimentació, els subministraments i el transport absorbeixen una part cada vegada més gran dels ingressos. Reclamem que les prestacions i les pensions també tinguin en compte aquesta realitat.</p>
+    </article>
+    <article class="reason">
+      <div class="num" data-i18n="reasonNum4">04 — DRETS LABORALS</div>
+      <h3 data-i18n="reasonTitle4">Millors condicions</h3>
+      <p data-i18n="reasonText4">Reclamem avenços en la negociació col·lectiva, convenis amb millores reals, reducció del temps de treball i més protecció de la salut i dels drets laborals.</p>
+    </article>
+  </div>
+  <div class="callout">
+    <div><strong data-i18n="calloutTitle">El que passa fora de la feina també és una qüestió laboral.</strong></div>
+    <a class="btn" href="#participa" data-i18n="joinButton">M'hi sumo</a>
+  </div>
+</div>
+</section>
+
+<section class="faq" id="dudas">
+<div class="wrap">
+  <div class="section-top">
+    <div>
+      <div class="kicker" data-i18n="faqKicker">02 / Resolem dubtes</div>
+      <h2 data-i18n="faqTitle">I què passa<br>si faig vaga?</h2>
+    </div>
+    <p class="intro" data-i18n="faqIntro">Aquestes són algunes de les preguntes més habituals. La informació està basada en la guia de drets laborals de La Intersindical per a la vaga de l'11N.</p>
+  </div>
+  <div class="faq-list">
+    <details><summary data-i18n="q1">He d'avisar l'empresa?</summary><p data-i18n="a1">No. No tens cap obligació de comunicar prèviament que faràs vaga ni de demanar permís. Tampoc no has de signar cap llista ni justificar la teva decisió per avançat.</p></details>
+    <details><summary data-i18n="q2">Em poden obligar a dir si faré vaga?</summary><p data-i18n="a2">No tens cap obligació de comunicar anticipadament si t'hi sumaràs. Pots decidir lliurement i no has de demanar cap autorització.</p></details>
+    <details><summary data-i18n="q3">Em poden acomiadar o sancionar?</summary><p data-i18n="a3">No per exercir legítimament el dret de vaga. Una sanció, un acomiadament o un tracte desfavorable motivat per participar en la vaga vulneraria aquest dret. Si passa, convé guardar proves i demanar assessorament sindical o jurídic.</p></details>
+    <details><summary data-i18n="q4">Cobraré el mateix aquest mes?</summary><p data-i18n="a4">No es cobra el salari corresponent al temps de vaga. El descompte pot afectar el salari i els complements d'aquest temps, així com les parts proporcionals que corresponguin. No és una multa ni una sanció addicional.</p></details>
+    <details><summary data-i18n="q5">Em poden treure dies de vacances?</summary><p data-i18n="a5">No. La participació en la vaga no pot reduir els teus dies de vacances ni generar cap penalització addicional.</p></details>
+    <details><summary data-i18n="q6">He de recuperar les hores un altre dia?</summary><p data-i18n="a6">La vaga no és un permís ni una absència que hagis de compensar. Es descompta el salari corresponent al temps de vaga, però no es converteix en hores pendents de recuperació.</p></details>
+    <details><summary data-i18n="q7">Puc fer vaga si treballo des de casa?</summary><p data-i18n="a7">El fet de teletreballar no elimina el dret de vaga. Si treballes per compte d'altri, també el pots exercir des de casa: secundar la vaga implica no treballar durant el període convocat.</p></details>
+    <details><summary data-i18n="q8">I si decideixo no fer vaga?</summary><p data-i18n="a8">La participació és voluntària. Pots treballar amb normalitat si decideixes no secundar-la. Ningú no t'ha de pressionar en un sentit ni en l'altre.</p></details>
+    <details><summary data-i18n="q9">L'empresa pot fixar serveis mínims?</summary><p data-i18n="a9">Els serveis mínims els estableix l'autoritat laboral competent quan correspon, no l'empresa per iniciativa pròpia. L'empresa s'ha d'ajustar a la resolució oficial.</p></details>
+    <details><summary data-i18n="q10">La vaga afecta tota la jornada?</summary><p data-i18n="a10">La convocatòria general registrada per la CGT fixa l'aturada de l'11 de novembre entre les 00.00 i les 23.59. Si tens un torn que comença el dia anterior o acaba l'endemà, consulta el preavís i la informació sindical específica.</p></details>
+  </div>
+  <p class="note" data-i18n="faqNote">Informació general, no assessorament jurídic individual. Consulta la guia sindical completa i el preavís aplicable al teu territori i sector per a casos concrets.</p>
+</div>
+</section>
+
+<section class="join" id="participa">
+<div class="wrap">
+  <div class="kicker" style="color:var(--lime)" data-i18n="joinKicker">03 / Participació a la nostra empresa</div>
+  <div class="section-top">
+    <div><h2 data-i18n="joinTitle">Ja som<br>més de 20.</h2></div>
+    <p class="intro" data-i18n="joinIntro">Cada persona que s'hi suma ajuda a fer que la reivindicació tingui més força. Compartir la informació també compta: parla amb els teus companys i resol els dubtes en comú.</p>
+  </div>
+  <div class="join-panel">
+    <div>
+      <div class="count">20<span style="color:#fff">+</span></div>
+      <p data-i18n="joinText">Persones de l'empresa ja han mostrat el seu suport a la iniciativa. T'hi sumes?</p>
+    </div>
+    <a class="btn" href="mailto:?subject=11N%20-%20Vull%20participar&body=Hola%2C%20vull%20sumar-me%20a%20la%20iniciativa%20de%20l%2711N.%20Em%20podeu%20explicar%20com%20participar%3F" data-i18n="joinEmail">Vull participar →</a>
+  </div>
+  <p style="font-size:13px;color:#d2dbea;margin-top:18px" data-i18n="joinNote">Pots respondre a la persona que t'ha compartit aquesta pàgina per sumar-te al grup i rebre més informació. No cal comunicar la teva decisió a l'empresa amb antelació.</p>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+  <strong data-i18n="footerSources">Fonts i més informació</strong>
+  <div class="sources">
+    <a href="https://laintersindical.cat/ens-costa-la-vida-vaga-11-de-novembre/" target="_blank" rel="noopener">La Intersindical · Vaga 11N</a>
+    <a href="https://www.ugt.es/ugt-registra-la-convocatoria-de-huelga-general-del-11-de-noviembre-para-reclamar-soluciones-la" target="_blank" rel="noopener">UGT · Convocatoria y reivindicaciones</a>
+    <a href="https://cgt.es/cgt-formaliza-ante-el-ministerio-de-trabajo-el-preaviso-de-huelga-general-del-11-de-noviembre/" target="_blank" rel="noopener">CGT · Preaviso de huelga general</a>
+    <a href="https://www.cnt.es/noticias/cnt-convocara-huelga-general-el-11-de-noviembre-para-reclamar-salarios-dignos-y-el-derecho-a-la-vivienda/" target="_blank" rel="noopener">CNT · Motivos de la convocatoria</a>
+  </div>
+  <div class="disclaimer" data-i18n="footerDisclaimer">Contingut preparat amb informació publicada per les organitzacions convocants i actualitzat el 5 de novembre de 2026. La pàgina és informativa i no substitueix l'assessorament sindical o jurídic. Revisa les fonts oficials per si es publiquen novetats.</div>
+</div>
+</footer>
+
+<script>
+const translations = {
+  ca: {
+    brandLabel: "VAGA GENERAL 11N",
+    brand: "WIRIS",
+    navReasons: "Motius",
+    navFaq: "Preguntes freqüents",
+    navJoin: "Participa-hi",
+    eyebrow: "Una jornada per defensar condicions de vida dignes",
+    heroTitle: "L'11N<br>aturem-nos a Wiris.",
+    heroDescription: "La vaga general de l'11 de novembre posa sobre la taula una qüestió que ens afecta a totes les persones treballadores: el cost de viure no pot continuar creixent més de pressa que els nostres salaris.",
+    heroButton1: "Entendre'n els motius",
+    heroButton2: "Resoldre els meus dubtes",
+    reasonsKicker: "01 / Per què fem vaga",
+    reasonsTitle: "Perquè viure<br>no hauria de ser<br>un luxe.",
+    reasonsIntro: "La convocatòria connecta reivindicacions laborals i socials. Volem un sou suficient per viure, tenir un habitatge i construir un futur.",
+    reasonNum1: "01 — HABITATGE",
+    reasonTitle1: "Un sostre assequible",
+    reasonText1: "Reclamem mesures per garantir l'accés a un habitatge digne i protegir les persones que pateixen desnonaments.",
+    reasonNum2: "02 — SALARIS",
+    reasonTitle2: "Sous que permetin viure",
+    reasonText2: "Demanem que els salaris i el salari mínim interprofessional evolucionin al ritme del cost de la vida, per no perdre poder adquisitiu mentre augmenten les despeses bàsiques.",
+    reasonNum3: "03 — COST DE LA VIDA",
+    reasonTitle3: "Arribar a final de mes",
+    reasonText3: "El lloguer, l'alimentació, els subministraments i el transport absorbeixen una part cada vegada més gran dels ingressos. Reclamem que les prestacions i les pensions també tinguin en compte aquesta realitat.",
+    reasonNum4: "04 — DRETS LABORALS",
+    reasonTitle4: "Millors condicions",
+    reasonText4: "Reclamem avenços en la negociació col·lectiva, convenis amb millores reals, reducció del temps de treball i més protecció de la salut i dels drets laborals.",
+    calloutTitle: "El que passa fora de la feina també és una qüestió laboral.",
+    joinButton: "M'hi sumo",
+    faqKicker: "02 / Resolem dubtes",
+    faqTitle: "I què passa<br>si faig vaga?",
+    faqIntro: "Aquestes són algunes de les preguntes més habituals. La informació està basada en la guia de drets laborals de La Intersindical per a la vaga de l'11N.",
+    q1: "He d'avisar l'empresa?",
+    a1: "No. No tens cap obligació de comunicar prèviament que faràs vaga ni de demanar permís. Tampoc no has de signar cap llista ni justificar la teva decisió per avançat.",
+    q2: "Em poden obligar a dir si faré vaga?",
+    a2: "No tens cap obligació de comunicar anticipadament si t'hi sumaràs. Pots decidir lliurement i no has de demanar cap autorització.",
+    q3: "Em poden acomiadar o sancionar?",
+    a3: "No per exercir legítimament el dret de vaga. Una sanció, un acomiadament o un tracte desfavorable motivat per participar en la vaga vulneraria aquest dret. Si passa, convé guardar proves i demanar assessorament sindical o jurídic.",
+    q4: "Cobraré el mateix aquest mes?",
+    a4: "No es cobra el salari corresponent al temps de vaga. El descompte pot afectar el salari i els complements d'aquest temps, així com les parts proporcionals que corresponguin. No és una multa ni una sanció addicional.",
+    q5: "Em poden treure dies de vacances?",
+    a5: "No. La participació en la vaga no pot reduir els teus dies de vacances ni generar cap penalització addicional.",
+    q6: "He de recuperar les hores un altre dia?",
+    a6: "La vaga no és un permís ni una absència que hagis de compensar. Es descompta el salari corresponent al temps de vaga, però no es converteix en hores pendents de recuperació.",
+    q7: "Puc fer vaga si treballo des de casa?",
+    a7: "El fet de teletreballar no elimina el dret de vaga. Si treballes per compte d'altri, també el pots exercir des de casa: secundar la vaga implica no treballar durant el període convocat.",
+    q8: "I si decideixo no fer vaga?",
+    a8: "La participació és voluntària. Pots treballar amb normalitat si decideixes no secundar-la. Ningú no t'ha de pressionar en un sentit ni en l'altre.",
+    q9: "L'empresa pot fixar serveis mínims?",
+    a9: "Els serveis mínims els estableix l'autoritat laboral competent quan correspon, no l'empresa per iniciativa pròpia. L'empresa s'ha d'ajustar a la resolució oficial.",
+    q10: "La vaga afecta tota la jornada?",
+    a10: "La convocatòria general registrada per la CGT fixa l'aturada de l'11 de novembre entre les 00.00 i les 23.59. Si tens un torn que comença el dia anterior o acaba l'endemà, consulta el preavís i la informació sindical específica.",
+    faqNote: "Informació general, no assessorament jurídic individual. Consulta la guia sindical completa i el preavís aplicable al teu territori i sector per a casos concrets.",
+    joinKicker: "03 / Participació a la nostra empresa",
+    joinTitle: "Ja som<br>més de 20.",
+    joinIntro: "Cada persona que s'hi suma ajuda a fer que la reivindicació tingui més força. Compartir la informació també compta: parla amb els teus companys i resol els dubtes en comú.",
+    joinText: "Persones de l'empresa ja han mostrat el seu suport a la iniciativa. T'hi sumes?",
+    joinEmail: "Vull participar →",
+    joinNote: "Pots respondre a la persona que t'ha compartit aquesta pàgina per sumar-te al grup i rebre més informació. No cal comunicar la teva decisió a l'empresa amb antelació.",
+    footerSources: "Fonts i més informació",
+    footerDisclaimer: "Contingut preparat amb informació publicada per les organitzacions convocants i actualitzat el 5 de novembre de 2026. La pàgina és informativa i no substitueix l'assessorament sindical o jurídic. Revisa les fonts oficials per si es publiquen novetats.",
+    languageLabel: "Canviar idioma",
+    langButton: "ES",
+    pageTitle: "11N · Vaga general a WIRIS"
+  },
+  es: {
+    brandLabel: "HUELGA GENERAL 11N",
+    brand: "WIRIS",
+    navReasons: "Motivos",
+    navFaq: "Preguntas frecuentes",
+    navJoin: "Participa",
+    eyebrow: "Una jornada para defender unas condiciones de vida dignas",
+    heroTitle: "El 11N<br>paramos en Wiris.",
+    heroDescription: "La huelga general del 11 de noviembre pone sobre la mesa una cuestión que nos afecta a todas las personas trabajadoras: el coste de vivir no puede seguir creciendo más rápido que nuestros salarios.",
+    heroButton1: "Entender los motivos",
+    heroButton2: "Resolver mis dudas",
+    reasonsKicker: "01 / Por qué hacemos huelga",
+    reasonsTitle: "Porque vivir<br>no debería ser<br>un lujo.",
+    reasonsIntro: "La convocatoria conecta reivindicaciones laborales y sociales. Queremos un salario suficiente para vivir, tener una vivienda y construir un futuro.",
+    reasonNum1: "01 — VIVIENDA",
+    reasonTitle1: "Un techo asequible",
+    reasonText1: "Reclamamos medidas para garantizar el acceso a una vivienda digna y proteger a las personas que sufren desahucios.",
+    reasonNum2: "02 — SALARIOS",
+    reasonTitle2: "Salarios que permitan vivir",
+    reasonText2: "Pedimos que los salarios y el salario mínimo interprofesional evolucionen al ritmo del coste de la vida, para no perder poder adquisitivo mientras aumentan los gastos básicos.",
+    reasonNum3: "03 — COSTE DE LA VIDA",
+    reasonTitle3: "Llegar a fin de mes",
+    reasonText3: "El alquiler, la alimentación, los suministros y el transporte absorben una parte cada vez mayor de los ingresos. Reclamamos que las prestaciones y las pensiones también tengan en cuenta esta realidad.",
+    reasonNum4: "04 — DERECHOS LABORALES",
+    reasonTitle4: "Mejores condiciones",
+    reasonText4: "Reclamamos avances en la negociación colectiva, convenios con mejoras reales, reducción del tiempo de trabajo y más protección de la salud y de los derechos laborales.",
+    calloutTitle: "Lo que ocurre fuera del trabajo también es una cuestión laboral.",
+    joinButton: "Me sumo",
+    faqKicker: "02 / Resolvemos dudas",
+    faqTitle: "¿Y qué pasa<br>si hago huelga?",
+    faqIntro: "Estas son algunas de las preguntas más habituales. La información se basa en la guía de derechos laborales de La Intersindical para la huelga del 11N.",
+    q1: "¿Tengo que avisar a la empresa?",
+    a1: "No. No tienes ninguna obligación de comunicar previamente que harás huelga ni de pedir permiso. Tampoco tienes que firmar ninguna lista ni justificar tu decisión por adelantado.",
+    q2: "¿Me pueden obligar a decir si haré huelga?",
+    a2: "No tienes ninguna obligación de comunicar anticipadamente si te sumarás. Puedes decidir libremente y no tienes que pedir ninguna autorización.",
+    q3: "¿Me pueden despedir o sancionar?",
+    a3: "No por ejercer legítimamente el derecho de huelga. Una sanción, un despido o un trato desfavorable motivado por participar en la huelga vulneraría este derecho. Si ocurre, conviene guardar pruebas y pedir asesoramiento sindical o jurídico.",
+    q4: "¿Cobraré lo mismo este mes?",
+    a4: "No se cobra el salario correspondiente al tiempo de huelga. El descuento puede afectar al salario y a los complementos de ese tiempo, así como a las partes proporcionales que correspondan. No es una multa ni una sanción adicional.",
+    q5: "¿Me pueden quitar días de vacaciones?",
+    a5: "No. La participación en la huelga no puede reducir tus días de vacaciones ni generar ninguna penalización adicional.",
+    q6: "¿Tengo que recuperar las horas otro día?",
+    a6: "La huelga no es un permiso ni una ausencia que debas compensar. Se descuenta el salario correspondiente al tiempo de huelga, pero no se convierte en horas pendientes de recuperación.",
+    q7: "¿Puedo hacer huelga si trabajo desde casa?",
+    a7: "El teletrabajo no elimina el derecho de huelga. Si trabajas por cuenta ajena, también puedes ejercerlo desde casa: secundar la huelga implica no trabajar durante el periodo convocado.",
+    q8: "¿Y si decido no hacer huelga?",
+    a8: "La participación es voluntaria. Puedes trabajar con normalidad si decides no secundarla. Nadie debe presionarte en un sentido ni en otro.",
+    q9: "¿La empresa puede fijar servicios mínimos?",
+    a9: "Los servicios mínimos los establece la autoridad laboral competente cuando corresponde, no la empresa por iniciativa propia. La empresa debe ajustarse a la resolución oficial.",
+    q10: "¿La huelga afecta a toda la jornada?",
+    a10: "La convocatoria general registrada por la CGT fija el paro del 11 de noviembre entre las 00:00 y las 23:59. Si tienes un turno que empieza el día anterior o acaba al día siguiente, consulta el preaviso y la información sindical específica.",
+    faqNote: "Información general, no asesoramiento jurídico individual. Consulta la guía sindical completa y el preaviso aplicable a tu territorio y sector para casos concretos.",
+    joinKicker: "03 / Participación en nuestra empresa",
+    joinTitle: "Ya somos<br>más de 20.",
+    joinIntro: "Cada persona que se suma ayuda a que la reivindicación tenga más fuerza. Compartir la información también cuenta: habla con tus compañeros y resuelve las dudas en común.",
+    joinText: "Personas de la empresa ya han mostrado su apoyo a la iniciativa. ¿Te sumas?",
+    joinEmail: "Quiero participar →",
+    joinNote: "Puedes responder a la persona que te ha compartido esta página para sumarte al grupo y recibir más información. No hace falta comunicar tu decisión a la empresa con antelación.",
+    footerSources: "Fuentes y más información",
+    footerDisclaimer: "Contenido preparado con información publicada por las organizaciones convocantes y actualizado el 5 de noviembre de 2026. La página es informativa y no sustituye el asesoramiento sindical o jurídico. Revisa las fuentes oficiales por si se publican novedades.",
+    languageLabel: "Cambiar idioma",
+    langButton: "CAT",
+    pageTitle: "11N · Huelga general en WIRIS"
+  }
+};
+
+const languageToggle = document.getElementById("languageToggle");
+let currentLanguage = "ca";
+
+function setLanguage(language) {
+  currentLanguage = language;
+  document.documentElement.lang = language;
+  document.title = translations[language].pageTitle;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+    const translatedText = translations[language][key];
+    if (translatedText !== undefined) element.innerHTML = translatedText;
+  });
+
+  languageToggle.textContent = translations[language].langButton;
+  languageToggle.setAttribute("aria-label", translations[language].languageLabel);
+  languageToggle.setAttribute("aria-pressed", language === "es" ? "true" : "false");
+}
+
+languageToggle.addEventListener("click", () => {
+  setLanguage(currentLanguage === "ca" ? "es" : "ca");
+});
+
+setLanguage("ca");
+</script>
+</body>
+</html>
