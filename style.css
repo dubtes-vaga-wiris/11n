@@ -537,7 +537,7 @@ button.btn {
 .callout2 h2 {
   margin: 0;
   color: var(--ink);
-  /*max-width: 880px;*/
+  max-width: 880px;
 }
 
 
