@@ -108,7 +108,7 @@ button.btn {
   cursor: pointer;
 }
 
-.callout2 {  background: var(--lime); display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.callout2 {  background: var(--lime); display: flex; justify-content: center; align-items: center }
 .callout2 h2 { margin: 4px 0 0; color: var(--ink); max-width: 580px; }
 
 
