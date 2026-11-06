@@ -43,6 +43,7 @@ header {
   z-index: 1000;
 }
 
+/* <---- NAV BAR STYLES ------> */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -51,6 +52,9 @@ header {
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
   font-weight: 850;
   letter-spacing: -.04em;
 }
@@ -71,6 +75,7 @@ header {
 .nav nav {
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .nav nav a {
@@ -79,6 +84,7 @@ header {
   text-decoration: none;
   color: var(--muted);
   margin-left: 18px;
+  white-space: nowrap;
 }
 
 .language-btn {
@@ -97,6 +103,54 @@ header {
   background: var(--orange);
   border-color: var(--orange);
   color: var(--paper);
+}
+
+/* Styles for nav bar in mobile */
+
+@media (max-width: 650px) {
+  header {
+    padding: 10px 0;
+  }
+
+  .wrap {
+    width: calc(100% - 24px);
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .brand {
+    font-size: 14px;
+  }
+
+  .brand span:first-child {
+    padding: 3px 7px;
+    margin-right: 6px;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .nav nav {
+    flex: 1;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .nav nav a {
+    font-size: 11px;
+    margin-left: 0;
+  }
+
+  .language-btn {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
 }
 
 .hero {
