@@ -78,9 +78,9 @@ h2 { font-size: clamp(34px, 5vw, 55px); letter-spacing: -.06em; line-height: 1.0
 .note { font-size: 12px; color: var(--muted); margin-top: 18px; }
 .join { background: var(--ink); color: #fff; }
 .join .intro { color: var(--lime); }
-.join-panel { margin-top: 30px; padding: 30px; border: 1px solid #64748b; border-radius: 13px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; }
+.join-panel { margin-top: 30px; padding: 30px; border: 1px solid var(--lime); border-radius: 16px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; }
 .count { font-size: clamp(58px, 9vw, 94px); font-weight: 900; letter-spacing: -.08em; line-height: 1; color: var(--lime); }
-.join-panel p { color: var(--lime); max-width: 520px; margin: 8px 0 0; }
+.join-panel p { color: var(--paper); max-width: 520px; margin: 8px 0 0; }
 .join-panel .btn { white-space: nowrap; }
 footer { padding: 35px 0 50px; color: var(--muted); font-size: 12px; }
 .sources { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0 20px; }
@@ -253,7 +253,7 @@ button.btn {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  border-radius: 20px;
+  
 }
 
 .modal.active {
@@ -266,6 +266,7 @@ button.btn {
     max-width: 460px;
     padding: 32px;
     box-sizing: border-box;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -292,6 +293,12 @@ button.btn {
   font-weight: 800;
   margin: 0;
   line-height: 1.2;
+}
+
+.modal-content p {
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
 }
 
 
