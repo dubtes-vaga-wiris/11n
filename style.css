@@ -55,7 +55,7 @@ h1 {
 .btn.secondary { background: var(--orange); color: #fff; }
 .btn.secondary:hover { background: #9f0000; border-color: #9f0000; }
 section { padding: 72px 0; }
-.section-top { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 30px; }
+.section-top { display: flex; justify-content: space-between; gap: 30px; align-items: end; }
 .kicker { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; font-weight: 800; color: var(--ink); }
 h2 { font-size: clamp(34px, 5vw, 55px); letter-spacing: -.06em; line-height: 1.02; margin: 10px 0 0; color: var(--orange); }
 .intro { max-width: 440px; color: var(--muted); margin: 0; }
