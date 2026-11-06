@@ -110,3 +110,11 @@ function updateModalScroll() {
   const hasOpenModal = document.querySelector(".modal.active");
   document.body.classList.toggle("modal-open", !!hasOpenModal);
 }
+
+const navBranch = document.getElementById("navBranch");
+navBranch.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});

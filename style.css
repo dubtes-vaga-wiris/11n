@@ -57,6 +57,7 @@ header {
   white-space: nowrap;
   font-weight: 850;
   letter-spacing: -.04em;
+  cursor: pointer;
 }
 
 .brand span:first-child {
@@ -150,6 +151,7 @@ header {
     font-size: 11px;
   }
 }
+
 .hero {
   padding: 82px 0 76px;
   background: var(--ink);
