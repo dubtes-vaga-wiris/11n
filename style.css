@@ -253,6 +253,7 @@ section {
   justify-content: space-between;
   gap: 30px;
   align-items: end;
+  margin-bottom: 14px;
 }
 
 .kicker {
