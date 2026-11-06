@@ -253,6 +253,7 @@ button.btn {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  border-radius: 20px;
 }
 
 .modal.active {
@@ -271,7 +272,7 @@ button.btn {
     gap: 18px;
     background: var(--paper);
     color: var(--ink);
-    border: 10px solid var(--orange);
+
 }
 
 .modal-close {
@@ -288,20 +289,17 @@ button.btn {
 
 .modal-content h2 {
   font-size: 32px;
-  font-weight: 900;
+  font-weight: 800;
   margin: 0;
   line-height: 1.2;
 }
 
-.modal-content p {
-  line-height: 1.5;
-  margin: 0;
-}
+
 
 .modal-email {
   display: block;
-  font-size: 22px;
-  font-weight: 900;
+  font-size: 20px;
+  font-weight: 800;
   color: var(--blue);
   margin: 20px 0;
   overflow-wrap: anywhere;
