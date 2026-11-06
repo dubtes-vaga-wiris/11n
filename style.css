@@ -135,18 +135,6 @@ button.btn {
 }
 
 
-.section-heading h2 {
-  font-size: clamp(38px, 6vw, 58px);
-  letter-spacing: -2.5px;
-  margin: 12px 0;
-}
-
-.section-heading p {
-  color: #626262;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
 .links-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -162,23 +150,14 @@ button.btn {
 }
 
 .link-category.red {
-  background: #E53935;
-  color: white;
+  background: var(--orange);
+  color: var(--paper);
 }
 
-.link-category.blue {
-  background: #246BCE;
-  color: white;
-}
-
-.link-category.yellow {
-  background: #FFD600;
-  color: #171717;
-}
 
 .link-category.black {
-  background: #171717;
-  color: white;
+  background: var(--muted);
+  color: var(--paper);
 }
 
 .category-icon {
