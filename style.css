@@ -17,7 +17,7 @@ body {
 }
 a { color: inherit; }
 .wrap { width: min(1080px, calc(100% - 40px)); margin: auto; }
-header { padding: 22px 0; border-bottom: 1px solid var(--line); }
+header { padding: 22px 0; border-bottom: 1px solid var(--line); position: sticky;}
 .nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 .brand { font-weight: 850; letter-spacing: -.04em; }
 .brand span:first-child {
@@ -78,9 +78,9 @@ h2 { font-size: clamp(34px, 5vw, 55px); letter-spacing: -.06em; line-height: 1.0
 .note { font-size: 12px; color: var(--muted); margin-top: 18px; }
 .join { background: var(--ink); color: #fff; }
 .join .intro { color: var(--lime); }
-.join-panel { margin-top: 30px; padding: 30px; border: 1px solid var(--lime); border-radius: 16px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; }
+.join-panel { margin-top: 30px; padding: 30px; border: 1px solid var(--paper); border-radius: 16px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; }
 .count { font-size: clamp(58px, 9vw, 94px); font-weight: 900; letter-spacing: -.08em; line-height: 1; color: var(--lime); }
-.join-panel p { color: var(--paper); max-width: 520px; margin: 8px 0 0; }
+.join-panel p { color: var(--lime); max-width: 520px; margin: 8px 0 0; }
 .join-panel .btn { white-space: nowrap; }
 footer { padding: 35px 0 50px; color: var(--muted); font-size: 12px; }
 .sources { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0 20px; }
@@ -174,6 +174,7 @@ button.btn {
 
 .link-category p {
   font-size: 14px;
+  color: var(--lime);
   line-height: 1.5;
   opacity: .85;
   margin: 0 0 22px;
