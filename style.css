@@ -109,7 +109,7 @@ header {
 
 @media (max-width: 650px) {
   header {
-    padding: 10px 0;
+    padding: 8px 0;
   }
 
   .wrap {
@@ -117,12 +117,16 @@ header {
   }
 
   .nav {
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: nowrap;
+    gap: 8px;
   }
 
   .brand {
-    font-size: 14px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 12px;
+    min-width: 0;
   }
 
   .brand span:first-child {
@@ -131,20 +135,14 @@ header {
   }
 
   .nav-right {
-    width: 100%;
-    justify-content: space-between;
-    gap: 8px;
+    width: auto;
+    margin-left: auto;
+    gap: 0;
+    flex-shrink: 0;
   }
 
   .nav nav {
-    flex: 1;
-    justify-content: space-between;
-    gap: 8px;
-  }
-
-  .nav nav a {
-    font-size: 11px;
-    margin-left: 0;
+    display: none;
   }
 
   .language-btn {
@@ -152,7 +150,6 @@ header {
     font-size: 11px;
   }
 }
-
 .hero {
   padding: 82px 0 76px;
   background: var(--ink);
