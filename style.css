@@ -422,8 +422,10 @@ h2 {
 
 .join-panel p {
   color: var(--lime);
+  font-weight: 800;
   max-width: 520px;
   margin: 8px 0 0;
+
 }
 
 .join-panel .btn {
